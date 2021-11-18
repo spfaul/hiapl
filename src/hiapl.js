@@ -53,7 +53,7 @@ function descriptiveFunctionName(codeblock)
 			}
 			return variableStorage.get(varName);
 
-		case "print-var":
+		case "print":
 			for (let childComponent of codeblock.children)
 			{
 				val = descriptiveFunctionName(childComponent);
@@ -151,6 +151,35 @@ function descriptiveFunctionName(codeblock)
 			}
 			return (descriptiveFunctionName(codeblock.children[0]) == descriptiveFunctionName(codeblock.children[1]))
 
+		case "gt":
+			if (codeblock.children.length != 2)
+			{
+				throw `gt takes 2 parameters, not ${codeblock.children.length}`;
+			}
+			return (descriptiveFunctionName(codeblock.children[0]) > descriptiveFunctionName(codeblock.children[1]))
+
+		case "lt":
+			if (codeblock.children.length != 2)
+			{
+				throw `lt takes 2 parameters, not ${codeblock.children.length}`;
+			}
+			return (descriptiveFunctionName(codeblock.children[0]) < descriptiveFunctionName(codeblock.children[1]))
+
+		case "gtoe":
+			if (codeblock.children.length != 2)
+			{
+				throw `gtoe takes 2 parameters, not ${codeblock.children.length}`;
+			}
+			return (descriptiveFunctionName(codeblock.children[0]) >= descriptiveFunctionName(codeblock.children[1]))
+
+		case "ltoe":
+			if (codeblock.children.length != 2)
+			{
+				throw `ltoe takes 2 parameters, not ${codeblock.children.length}`;
+			}
+			return (descriptiveFunctionName(codeblock.children[0]) <= descriptiveFunctionName(codeblock.children[1]))
+
+
 		case "not":
 			if (codeblock.children.length != 1)
 			{
@@ -238,6 +267,7 @@ function descriptiveFunctionName(codeblock)
 
 for (let codeblock of document.querySelectorAll("hiapl-script"))
 {
+	codeblock.style.display = "none";
 	descriptiveFunctionName(codeblock);
 }
 

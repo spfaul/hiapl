@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello, world!</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <hiapl-script>
+
+    <!-- declare variables -->
+    <var name="count">
+      <int>1</int>
+    </var>
+    <var name="string">
+      <str></str>
+    </var>
+
+    <!-- loop from 1 to 15 -->
+    <loop>
+      <cond>
+        <ltoe>
+          <ref>count</ref>
+          <int>15</int>
+        </ltoe>
+      </cond>
+
+      
+      <do>
+        <!-- if divides by 3 with no remainder, append Fizz to string -->
+        <if>
+          <cond>
+            <eq>
+              <mod>
+                <ref>count</ref>
+                <int>3</int>
+              </mod>
+              <int>0</int>
+            </eq>
+          </cond>
+
+          <do>
+            <set-var var="string">
+              <sum>
+                <ref>string</ref>
+                <str>Fizz</str>
+              </sum>
+            </set-var>
+          </do>
+        </if>
+
+        <!-- if divides by 5 with no remainder, append Buzz to string -->
+        <if>
+          <cond>
+            <eq>
+              <mod>
+                <ref>count</ref>
+                <int>5</int>
+              </mod>
+              <int>0</int>
+            </eq>
+          </cond>
+
+          <do>
+            <set-var var="string">
+              <sum>
+                <ref>string</ref>
+                <str>Buzz</str>
+              </sum>
+            </set-var>
+          </do>
+        </if>
+
+        <!-- if string isn't empty, print it -->
+        <if>
+          <cond>
+            <not><eq>
+              <ref>string</ref>
+              <str></str>
+            </eq></not>
+          </cond>
+
+          <do>
+            <print>
+              <ref>string</ref>
+            </print>
+          </do>
+        </if>
+
+        <!-- reset string to be empty -->
+        <set-var var="string">
+          <str></str>
+        </set-var>
+
+        <!-- increment count by 1 -->
+        <set-var var="count">
+          <sum>
+            <ref>count</ref>
+            <int>1</int>
+          </sum>
+        </set-var>
+      </do>
+    </loop>
+
+  </hiapl-script>
+  <script type="text/javascript", src="../src/hiapl.js"></script>
+</body>
+</html>
