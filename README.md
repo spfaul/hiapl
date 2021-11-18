@@ -14,7 +14,6 @@ Download `src/hiapl.js` locally and add the following line to your html file:
 Some hand-written examples are provided under `examples/`.
 > Viewer discretion is advised.
 
-## Contributions
-I have way too much free time. Just make a PR, I'll review it in like a day.
+
 
 
