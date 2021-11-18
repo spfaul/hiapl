@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello, world!</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+
+    <hiapl-script>
+
+        <var name="count">
+          <int>0</int>
+        </var>
+
+        <loop>
+          <cond>
+            <not><eq>
+              <ref>count</ref>
+              <int>5</int>
+            </eq></not>
+          </cond>
+
+          <do>
+            <print-var>
+              <ref>count</ref>
+            </print-var>
+
+            <set-var var="count">
+              <sum>
+                <ref>count</ref>
+                <int>1</int>
+              </sum>
+            </set-var>
+          </do>
+        </loop>
+
+    </hiapl-script>
+
+    <script type="text/javascript", src="../src/hiapl.js"></script>
+</body>
+</html>
