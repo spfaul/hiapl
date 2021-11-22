@@ -2,7 +2,7 @@
 
 This is for all you doubters that said it wasn't. Guess what, it is now.
 
-I can finally put HTML on my resume. I'm sure all the kids at school will be astonished at my exceptional HTML programming skills :DDD
+I can finally put HTML on my resume.
 
 
 ## Usage (why??)
